@@ -1,6 +1,8 @@
 # redis
 redis相关问题:如高并发下,双写不一致
+
 基于springboot2.0:
+
 1.nginx+lua进行流量分发,把id分发到指定tomcat服务上
 
 2.每个服务都起一个线程池,管理若干个固定大小的队列
