@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beneil.redis.mapper.UserMapper" >
+    <resultMap id="myuser" type="com.beneil.redis.pojo.User">
+        <result column="uid" property="id"/>
+        <result column="uname" property="uname"/>
+        <result column="uaddress" property="uaddress"/>
+    </resultMap>
+    <select id="queryUser" resultMap="myuser">
+        SELECT *
+        FROM users
+        WHERE uid=#{id}
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE users
+        SET uname=#{uname}
+        WHERE uid=#{id}
+    </update>
+</mapper>

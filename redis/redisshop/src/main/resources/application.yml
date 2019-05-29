@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: ben
+    password: ben
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.240.129:3306/mydb?characterEncoding=utf-8
+  redis:
+    cluster:
+#      nodes: 192.168.240.129:6379 192.168.240.129:6479 192.168.240.129:6579
+      nodes[0]: 192.168.240.129:6379
+      nodes[1]: 192.168.240.129:6479
+      nodes[2]: 192.168.240.129:6579
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.beneil.redis.pojo
